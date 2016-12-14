@@ -6,7 +6,7 @@ let config = require('./config/config')[env];
 
 require('./config/database')(config);
 require('./config/express')(config, app);
-require('./config/routes')(app);
+require('./routes/routes')(app);
 require('./config/passport')();
 require('./seeders/databaseSeeder')();
 
