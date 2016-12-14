@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-lg-12 text-center">
+        <h1>All admins</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                {{#if errors}}
+                    <div class="alert alert-danger">
+                        {{#each errors}}
+                            <p>{{ message }}</p>
+                        {{/each }}
+                    </div>
+
+                {{/if}}
+                <form action="/users/admins/add" method="post">
+                    <div class="form-group">
+                        <label for="username">Username: </label>
+                        <input type="text" class="form-control" id="username" name="username">
+                    </div>
+
+                    <button class="btn btn-default">Add Admin Role</button>
+
+                </form>
+            </div>
+        </div>
+        <p>Current admins:</p>
+        {{#each admins}}
+            <a href="/users/profile/{{username}}">{{username}}</a>
+        {{/each}}
+    </div>
+</div>

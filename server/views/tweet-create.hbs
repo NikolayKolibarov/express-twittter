@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-lg-6 col-lg-offset-3">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Create Tweet
+            </div>
+            <div class="panel-body">
+
+                {{#if errors}}
+                    <div class="alert alert-danger">
+                        {{#each errors}}
+                            <p>{{ message }}</p>
+                        {{/each }}
+                    </div>
+
+                {{/if}}
+
+                <form method="post" action="/tweets/create">
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <input type="text" class="form-control" id="message" name="message">
+                    </div>
+                    <p></p>
+                    <button class="btn btn-success">Create</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

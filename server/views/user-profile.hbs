@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col-lg-12 text-center">
+        <h1>User Profile - {{user.username}}</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6">
+        <h2>{{user.username}} Tweets</h2>
+        {{#if tweets}}
+        {{else}}
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1>No tweets available.</h1>
+                </div>
+            </div>
+        {{/if}}
+        {{#each tweets}}
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">
+                    <h3>{{_creator.username}}</h3>
+                    <p>Date: {{date}}</p>
+                    <p>Views: {{views}}</p>
+                </div>
+                <div class="panel-body text-center">
+                    <p>{{message}}</p>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+    <div class="col-lg-6">
+        <h2>External Tweets</h2>
+
+        {{#if externalTweets}}
+        {{else}}
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1>No tweets available.</h1>
+                </div>
+            </div>
+        {{/if}}
+        {{#each externalTweets}}
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">
+                    <h3>{{_creator.username}}</h3>
+                    <p>Date: {{date}}</p>
+                    <p>Views: {{views}}</p>
+                </div>
+                <div class="panel-body text-center">
+                    <p>{{message}}</p>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>

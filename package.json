@@ -1,0 +1,23 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nnk",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-fileupload": "0.0.5",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.14.1",
+    "mongoose": "4.6.6",
+    "nodemon": "^1.11.0",
+    "passport": "0.3.2",
+    "passport-local": "1.0.0"
+  }
+}

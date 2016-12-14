@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-lg-12 text-center">
+        <h1>Express Twitter</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12 text-center">
+        {{#if tweets}}
+        {{else}}
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1>No tweets available.</h1>
+                </div>
+            </div>
+        {{/if}}
+        {{#each tweets}}
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">
+                    <h3>{{_creator.username}}</h3>
+                    <p>Date: {{date}}</p>
+                    <p>Views: {{views}}</p>
+                    {{#if ../isAdmin}}
+                        <a href="/tweets/edit/{{_id}}" class="btn btn-default">Edit</a>
+                        <form action="/tweets/delete/{{_id}}" method="post">
+                            <button class="btn btn-default">Delete</button>
+                        </form>
+                    {{/if}}
+                </div>
+                <div class="panel-body text-center">
+                    <p>{{message}}</p>
+
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
